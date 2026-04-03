@@ -2,7 +2,7 @@
 // All heavy lifting (headless browser, pattern matching) is done by the backend.
 
 // ── Update this to your deployed Railway URL after deployment ──────────────
-const BACKEND_URL = "https://martech-scanner-backend-production.up.railway.app";
+const BACKEND_URL = "https://martech-scanner-production.up.railway.app";
 // ──────────────────────────────────────────────────────────────────────────
 
 /**
