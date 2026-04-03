@@ -35,7 +35,8 @@
     "name": "Google Ads",
     "category": "Advertising",
     "patterns": [
-      "www\\.googletagmanager\\.com"
+      "www\\.googletagmanager\\.com",
+      "googleads\\.g\\.doubleclick\\.net"
     ],
     "learnedAt": "2026-04-03T18:22:39.215Z"
   },
@@ -91,7 +92,8 @@
     "name": "Branch",
     "category": "Marketing Automation",
     "patterns": [
-      "branch\\.io"
+      "branch\\.io",
+      "app\\.link"
     ],
     "learnedAt": "2026-04-03T18:26:41.903Z"
   },
@@ -198,5 +200,37 @@
       "p11\\.techlab-cdn\\.com"
     ],
     "learnedAt": "2026-04-03T18:28:25.675Z"
+  },
+  {
+    "name": "Amazon Advertising",
+    "category": "Advertising",
+    "patterns": [
+      "c\\.amazon-adsystem\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:31:13.959Z"
+  },
+  {
+    "name": "Pinterest Tag",
+    "category": "Advertising",
+    "patterns": [
+      "pinimg\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:31:13.959Z"
+  },
+  {
+    "name": "Meta Pixel (Facebook)",
+    "category": "Advertising",
+    "patterns": [
+      "connect\\.facebook\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:31:13.959Z"
+  },
+  {
+    "name": "FullStory",
+    "category": "Session Recording",
+    "patterns": [
+      "rs\\.fullstory\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:31:13.959Z"
   }
 ]
