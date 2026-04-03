@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "name": "Adobe Fonts (Typekit)",
+    "category": "Video & Content",
+    "patterns": [
+      "use\\.typekit\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.214Z"
+  },
+  {
+    "name": "Cookiebot",
+    "category": "Consent Management",
+    "patterns": [
+      "consent\\.cookiebot\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "Adobe Helix RUM",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "rum\\.hlx\\.page"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "Adobe Experience Platform Launch",
+    "category": "Tag Manager",
+    "patterns": [
+      "adobedtm\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "Google Ads",
+    "category": "Advertising",
+    "patterns": [
+      "www\\.googletagmanager\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "Google Maps API",
+    "category": "Other",
+    "patterns": [
+      "maps\\.googleapis\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "AddThis",
+    "category": "Video & Content",
+    "patterns": [
+      "s7\\.addthis\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "EqualWeb",
+    "category": "Other",
+    "patterns": [
+      "equalweb\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:22:39.215Z"
+  }
+]
