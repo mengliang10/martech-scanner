@@ -5,6 +5,7 @@ require("dotenv").config();
 const express = require("express");
 const cors    = require("cors");
 const { scan } = require("./scraper");
+const { load: loadLearned } = require("./pattern-learner");
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -53,6 +54,14 @@ app.post("/scan", async (req, res) => {
       detail: err.message,
     });
   }
+});
+
+// ── Export learned patterns ───────────────────────────────────────────────────
+// GET /export-patterns
+// Returns learned-patterns.json so you can commit it to the repo and persist
+// patterns across Railway deployments.
+app.get("/export-patterns", (_req, res) => {
+  res.json(loadLearned());
 });
 
 app.listen(PORT, () => {

@@ -5,6 +5,7 @@ const { chromium } = require("playwright-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const { MARTECH_PATTERNS } = require("./patterns");
 const { identifyWithAI } = require("./ai-identifier");
+const { mergeWithLearned } = require("./pattern-learner");
 
 chromium.use(StealthPlugin());
 
@@ -75,12 +76,12 @@ async function scrape(url) {
  * Run every pattern against both the rendered HTML and the collected
  * network request URLs. Returns deduplicated, sorted matched tags.
  */
-function detectTags(html, requestUrls) {
+function detectTags(html, requestUrls, patterns) {
   const requestBlob = requestUrls.join("\n");
   const found = [];
   const seen  = new Set();
 
-  for (const tag of MARTECH_PATTERNS) {
+  for (const tag of patterns) {
     for (const raw of tag.patterns) {
       try {
         const re = new RegExp(raw, "i");
@@ -150,11 +151,12 @@ function extractSignals(html, requestUrls, targetUrl) {
 }
 
 /**
- * Full pipeline: scrape → detect → group → AI identify → return result object
+ * Full pipeline: scrape → detect (patterns + learned) → AI identify → return result object
  */
 async function scan(url) {
   const { html, requestUrls } = await scrape(url);
-  const tags = detectTags(html, requestUrls);
+  const allPatterns = mergeWithLearned(MARTECH_PATTERNS);
+  const tags = detectTags(html, requestUrls, allPatterns);
   const grouped = groupByCategory(tags);
 
   const signals = extractSignals(html, requestUrls, url);

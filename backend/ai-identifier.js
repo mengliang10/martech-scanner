@@ -1,8 +1,10 @@
 // ai-identifier.js — AI-based martech tag identification
 // Tries DeepSeek first, then Anthropic for any remaining unidentified signals
+// Learned patterns are saved to learned-patterns.json for future reuse
 
-const OpenAI = require('openai');
+const OpenAI   = require('openai');
 const Anthropic = require('@anthropic-ai/sdk');
+const { learnPatterns } = require('./pattern-learner');
 
 const CATEGORIES = [
   'Analytics', 'Advertising', 'Tag Manager', 'Marketing Automation',
@@ -22,7 +24,8 @@ URLs:
 ${urls.join('\n')}
 ${skipNote}
 
-Return ONLY a JSON array with no markdown or explanation. Each element: {"name":"Tool Name","category":"Category"}
+Return ONLY a JSON array with no markdown or explanation.
+Each element: {"name":"Tool Name","category":"Category","matchedUrl":"exact URL from the list above that identifies this tool"}
 Valid categories: ${CATEGORIES.join(', ')}
 Only include tools you are confident about. Return [] if none found.`;
 }
@@ -76,8 +79,9 @@ async function identifyWithAnthropic(urls, skipNames) {
 /**
  * Identify unknown martech tools using AI.
  * DeepSeek runs first; Anthropic handles anything it missed.
+ * Results with a matchedUrl are persisted to learned-patterns.json.
  *
- * @param {string[]} signals  - URLs/signals not matched by patterns
+ * @param {string[]} signals    - URLs not matched by patterns
  * @param {Array}    patternTags - tags already found by pattern matching
  * @returns {{ aiTags: Array, providers: string[] }}
  */
@@ -92,7 +96,7 @@ async function identifyWithAI(signals, patternTags) {
   const dsResults = await identifyWithDeepSeek(signals, foundNames);
   for (const t of dsResults) {
     if (t.name && t.category) {
-      aiTags.push({ name: t.name, category: t.category, source: 'DeepSeek' });
+      aiTags.push({ name: t.name, category: t.category, matchedUrl: t.matchedUrl || null, source: 'DeepSeek' });
     }
   }
   if (aiTags.length > 0) providers.push('DeepSeek');
@@ -105,11 +109,14 @@ async function identifyWithAI(signals, patternTags) {
     if (!t.name || !t.category) continue;
     const lower = t.name.toLowerCase();
     if (!allFoundNames.some(n => n.toLowerCase() === lower)) {
-      aiTags.push({ name: t.name, category: t.category, source: 'Anthropic' });
+      aiTags.push({ name: t.name, category: t.category, matchedUrl: t.matchedUrl || null, source: 'Anthropic' });
       anthropicAdded++;
     }
   }
   if (anthropicAdded > 0) providers.push('Anthropic');
+
+  // Persist learned patterns so future scans skip the LLM
+  learnPatterns(aiTags);
 
   aiTags.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
   return { aiTags, providers };
