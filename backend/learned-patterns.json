@@ -232,5 +232,13 @@
       "rs\\.fullstory\\.com"
     ],
     "learnedAt": "2026-04-03T18:31:13.959Z"
+  },
+  {
+    "name": "Akamai",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "ds-aksb-a\\.akamaihd\\.net/aksb\\.min\\.js"
+    ],
+    "learnedAt": "2026-04-03T18:32:37.875Z"
   }
 ]
