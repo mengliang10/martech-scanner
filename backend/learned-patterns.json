@@ -280,8 +280,17 @@
     "name": "GeeTest Captcha",
     "category": "Other",
     "patterns": [
-      "geo\\.captcha-delivery\\.com"
+      "geo\\.captcha-delivery\\.com",
+      "ct\\.captcha-delivery\\.com"
     ],
     "learnedAt": "2026-04-03T18:33:35.904Z"
+  },
+  {
+    "name": "Captcha Delivery",
+    "category": "Other",
+    "patterns": [
+      "ct\\.captcha-delivery\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:33:49.686Z"
   }
 ]
