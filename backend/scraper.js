@@ -151,6 +151,23 @@ function extractSignals(html, requestUrls, targetUrl) {
 }
 
 /**
+ * Remove signals already matched by any known pattern.
+ * AI only needs to see URLs that pattern matching couldn't identify.
+ */
+function filterUnmatchedSignals(signals, patterns) {
+  return signals.filter(url => {
+    for (const tag of patterns) {
+      for (const raw of tag.patterns) {
+        try {
+          if (new RegExp(raw, "i").test(url)) return false;
+        } catch {}
+      }
+    }
+    return true;
+  });
+}
+
+/**
  * Full pipeline: scrape → detect (patterns + learned) → AI identify → return result object
  */
 async function scan(url) {
@@ -160,7 +177,9 @@ async function scan(url) {
   const grouped = groupByCategory(tags);
 
   const signals = extractSignals(html, requestUrls, url);
-  const { aiTags, providers } = await identifyWithAI(signals, tags);
+  const unmatchedSignals = filterUnmatchedSignals(signals, allPatterns);
+  console.log(`[scan] ${signals.length} signals, ${unmatchedSignals.length} unmatched → AI`);
+  const { aiTags, providers } = await identifyWithAI(unmatchedSignals, tags);
   const aiGrouped = groupByCategory(aiTags);
 
   return {
