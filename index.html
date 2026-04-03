@@ -165,10 +165,9 @@
 
   <footer>
     <p>Patterns sourced from <a href="https://github.com/wappalyzer/wappalyzer" target="_blank" rel="noopener">Wappalyzer</a> (MIT).
-    Page fetched via <a href="https://allorigins.win" target="_blank" rel="noopener">allorigins.win</a> CORS proxy.</p>
+    Powered by headless Chromium via Playwright.</p>
   </footer>
 
-  <script src="patterns.js"></script>
   <script src="scanner.js"></script>
   <script>
     const urlInput = document.getElementById("urlInput");
@@ -199,7 +198,7 @@
       scanBtn.disabled = false;
     }
 
-    function setResults(grouped, total) {
+    function setResults(grouped, total, durationMs) {
       statusEl.textContent = "";
       scanBtn.disabled = false;
 
@@ -216,7 +215,8 @@
       }
 
       const categories = Object.keys(grouped).sort();
-      let html = `<p class="summary">Found <strong>${total} tag${total !== 1 ? "s" : ""}</strong> across ${categories.length} categor${categories.length !== 1 ? "ies" : "y"}.</p>`;
+      const dur = durationMs ? ` in ${(durationMs / 1000).toFixed(1)}s` : "";
+      let html = `<p class="summary">Found <strong>${total} tag${total !== 1 ? "s" : ""}</strong> across ${categories.length} categor${categories.length !== 1 ? "ies" : "y"}${dur}.</p>`;
 
       for (const cat of categories) {
         const pills = grouped[cat]
