@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 # Install Chromium and all its OS-level dependencies
 RUN npx playwright install --with-deps chromium
