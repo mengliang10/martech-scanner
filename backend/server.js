@@ -7,22 +7,8 @@ const { scan } = require("./scraper");
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
-// Allow requests from GitHub Pages and localhost dev
-const ALLOWED_ORIGINS = [
-  "https://mengliang10.github.io",
-  "http://localhost:8080",
-  "http://localhost:3000",
-  "http://127.0.0.1:8080",
-];
-
-app.use(cors({
-  origin: (origin, cb) => {
-    // Allow requests with no origin (curl, Postman, server-to-server)
-    if (!origin || ALLOWED_ORIGINS.includes(origin)) return cb(null, true);
-    cb(new Error(`CORS: origin ${origin} not allowed`));
-  },
-  methods: ["GET", "POST"],
-}));
+// Public tool — open CORS
+app.use(cors());
 
 app.use(express.json());
 
