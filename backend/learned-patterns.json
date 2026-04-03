@@ -264,7 +264,8 @@
     "category": "Performance Monitoring",
     "patterns": [
       "s2\\.go-mpulse\\.net",
-      "c\\.go-mpulse\\.net"
+      "c\\.go-mpulse\\.net",
+      "684d0d45\\.akstat\\.io"
     ],
     "learnedAt": "2026-04-03T18:33:35.904Z"
   },
@@ -281,16 +282,25 @@
     "category": "Other",
     "patterns": [
       "geo\\.captcha-delivery\\.com",
-      "ct\\.captcha-delivery\\.com"
+      "captcha-delivery\\.com"
     ],
     "learnedAt": "2026-04-03T18:33:35.904Z"
   },
   {
-    "name": "Captcha Delivery",
-    "category": "Other",
+    "name": "OneTrust Consent Management Platform",
+    "category": "Consent Management",
     "patterns": [
-      "ct\\.captcha-delivery\\.com"
+      "privacyportal\\.onetrust\\.com",
+      "consent-api\\.onetrust\\.com"
     ],
-    "learnedAt": "2026-04-03T18:33:49.686Z"
+    "learnedAt": "2026-04-03T18:35:51.053Z"
+  },
+  {
+    "name": "Best Western Loyalty SSO",
+    "category": "CRM",
+    "patterns": [
+      "loyaltysso\\.bestwestern\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:35:51.053Z"
   }
 ]
