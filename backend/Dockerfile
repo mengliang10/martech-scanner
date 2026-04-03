@@ -1,16 +1,21 @@
-# Use the official Playwright image — includes Chromium + all system deps
-FROM mcr.microsoft.com/playwright:v1.44.0-jammy
+# Use slim Node — install Playwright + Chromium + all system deps in one step
+FROM node:20-slim
+
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    fonts-liberation \
+    wget \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Install Node dependencies first (layer cache)
 COPY package*.json ./
 RUN npm ci
 
-# Install Chromium for playwright-extra (on top of the base image)
-RUN npx playwright install chromium
+# Install Chromium and all its OS-level dependencies
+RUN npx playwright install --with-deps chromium
 
-# Copy source
 COPY . .
 
 ENV PORT=3000
