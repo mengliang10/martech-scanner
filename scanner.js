@@ -1,18 +1,47 @@
 // scanner.js — core fetch + pattern matching logic
 
-const CORS_PROXY = "https://api.allorigins.win/get?url=";
+// Proxies are tried in order; the first to succeed wins.
+const CORS_PROXIES = [
+  {
+    name: "allorigins",
+    build: (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+    extract: async (res) => {
+      const data = await res.json();
+      if (!data.contents) throw new Error("Empty response");
+      return data.contents;
+    },
+  },
+  {
+    name: "corsproxy.io",
+    build: (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    extract: async (res) => res.text(),
+  },
+  {
+    name: "codetabs",
+    build: (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    extract: async (res) => res.text(),
+  },
+];
 
 /**
- * Fetch the raw HTML of a URL via CORS proxy.
- * Returns the HTML string or throws on failure.
+ * Fetch the raw HTML of a URL, trying each CORS proxy in turn.
+ * Returns the HTML string or throws if all proxies fail.
  */
-async function fetchPage(url) {
-  const encoded = encodeURIComponent(url);
-  const res = await fetch(`${CORS_PROXY}${encoded}`);
-  if (!res.ok) throw new Error(`Proxy returned ${res.status}`);
-  const data = await res.json();
-  if (!data.contents) throw new Error("Empty response from proxy");
-  return data.contents;
+async function fetchPage(url, onProxyAttempt) {
+  const errors = [];
+  for (const proxy of CORS_PROXIES) {
+    if (onProxyAttempt) onProxyAttempt(proxy.name);
+    try {
+      const res = await fetch(proxy.build(url), { signal: AbortSignal.timeout(15000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const html = await proxy.extract(res);
+      if (!html || html.trim().length === 0) throw new Error("Empty body");
+      return html;
+    } catch (err) {
+      errors.push(`${proxy.name}: ${err.message}`);
+    }
+  }
+  throw new Error(`All proxies failed — ${errors.join(" | ")}`);
 }
 
 /**
@@ -80,9 +109,11 @@ async function runScan(rawUrl, { setStatus, setResults, setError }) {
   setStatus("Fetching page…");
   let html;
   try {
-    html = await fetchPage(url);
+    html = await fetchPage(url, (proxyName) => {
+      setStatus(`Trying via ${proxyName}…`);
+    });
   } catch (err) {
-    setError(`Could not fetch the page: ${err.message}`);
+    setError(`Could not fetch the page. The site may block automated requests, or all proxies are unavailable.\n\nDetails: ${err.message}`);
     return;
   }
 
