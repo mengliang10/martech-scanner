@@ -4,6 +4,7 @@
 const { chromium } = require("playwright-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const { MARTECH_PATTERNS } = require("./patterns");
+const { identifyWithAI } = require("./ai-identifier");
 
 chromium.use(StealthPlugin());
 
@@ -115,13 +116,56 @@ function groupByCategory(tags) {
 }
 
 /**
- * Full pipeline: scrape → detect → group → return result object
+ * Extract third-party script URLs and network requests for AI analysis.
+ * Returns up to 150 deduplicated URLs not from the target domain.
+ */
+function extractSignals(html, requestUrls, targetUrl) {
+  const signals = new Set();
+  let targetHost = "";
+  try { targetHost = new URL(targetUrl).hostname; } catch {}
+
+  // Script src tags from rendered HTML
+  const scriptRe = /<script[^>]+src=["']([^"'>]+)["']/gi;
+  let m;
+  while ((m = scriptRe.exec(html)) !== null) {
+    try {
+      const u = new URL(m[1], targetUrl);
+      if (u.protocol.startsWith("http") && u.hostname !== targetHost) {
+        signals.add(u.href);
+      }
+    } catch {}
+  }
+
+  // Third-party network request URLs
+  for (const u of requestUrls) {
+    try {
+      const parsed = new URL(u);
+      if (parsed.protocol.startsWith("http") && parsed.hostname !== targetHost) {
+        signals.add(u);
+      }
+    } catch {}
+  }
+
+  return [...signals].slice(0, 150);
+}
+
+/**
+ * Full pipeline: scrape → detect → group → AI identify → return result object
  */
 async function scan(url) {
   const { html, requestUrls } = await scrape(url);
   const tags = detectTags(html, requestUrls);
   const grouped = groupByCategory(tags);
-  return { tags, grouped, total: tags.length, requestUrlCount: requestUrls.length };
+
+  const signals = extractSignals(html, requestUrls, url);
+  const { aiTags, providers } = await identifyWithAI(signals, tags);
+  const aiGrouped = groupByCategory(aiTags);
+
+  return {
+    tags, grouped, total: tags.length,
+    requestUrlCount: requestUrls.length,
+    aiTags, aiGrouped, aiTotal: aiTags.length, aiProviders: providers,
+  };
 }
 
 module.exports = { scan };

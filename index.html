@@ -131,6 +131,49 @@
     }
     .empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
 
+    .ai-box {
+      margin-top: 28px;
+      border: 1.5px solid #e8e0f8;
+      border-radius: 10px;
+      padding: 20px 22px;
+      background: #faf8ff;
+    }
+    .ai-box-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .ai-box-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #7c4dbd;
+    }
+    .ai-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: #ede8f8;
+      color: #7c4dbd;
+    }
+    .ai-tag-pill {
+      background: #ede8f8;
+      color: #6b3fa0;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+    .ai-empty {
+      font-size: 0.85rem;
+      color: #aaa;
+      text-align: center;
+      padding: 8px 0;
+    }
+
     footer {
       margin-top: 48px;
       font-size: 0.8rem;
@@ -198,37 +241,61 @@
       scanBtn.disabled = false;
     }
 
-    function setResults(grouped, total, durationMs) {
+    function renderCategoryBlocks(grouped, pillClass) {
+      const categories = Object.keys(grouped).sort();
+      return categories.map(cat => {
+        const pills = grouped[cat]
+          .map(name => `<span class="${pillClass}">${escHtml(name)}</span>`)
+          .join("");
+        return `<div class="category-block">
+          <div class="category-title">${escHtml(cat)}</div>
+          <div class="tag-list">${pills}</div>
+        </div>`;
+      }).join("");
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+
+    function setResults(grouped, total, durationMs, aiGrouped, aiTotal, aiProviders) {
       statusEl.textContent = "";
       scanBtn.disabled = false;
 
-      if (total === 0) {
-        resultsEl.innerHTML = `
-          <div class="empty-state">
-            <div class="icon">🔍</div>
-            <p>No known Martech tags detected.</p>
-            <p style="margin-top:8px;font-size:0.82rem;">
-              The page may use obfuscated tags, a server-side setup, or tags not yet in our pattern library.
-            </p>
-          </div>`;
-        return;
-      }
-
-      const categories = Object.keys(grouped).sort();
       const dur = durationMs ? ` in ${(durationMs / 1000).toFixed(1)}s` : "";
-      let html = `<p class="summary">Found <strong>${total} tag${total !== 1 ? "s" : ""}</strong> across ${categories.length} categor${categories.length !== 1 ? "ies" : "y"}${dur}.</p>`;
+      let html = "";
 
-      for (const cat of categories) {
-        const pills = grouped[cat]
-          .map(name => `<span class="tag-pill">${name}</span>`)
-          .join("");
-        html += `
-          <div class="category-block">
-            <div class="category-title">${cat}</div>
-            <div class="tag-list">${pills}</div>
-          </div>`;
+      if (total === 0) {
+        html += `<div class="empty-state">
+          <div class="icon">🔍</div>
+          <p>No known Martech tags detected.</p>
+          <p style="margin-top:8px;font-size:0.82rem;">
+            The page may use obfuscated tags, a server-side setup, or tags not yet in our pattern library.
+          </p>
+        </div>`;
+      } else {
+        const categories = Object.keys(grouped).sort();
+        html += `<p class="summary">Found <strong>${total} tag${total !== 1 ? "s" : ""}</strong> across ${categories.length} categor${categories.length !== 1 ? "ies" : "y"}${dur}.</p>`;
+        html += renderCategoryBlocks(grouped, "tag-pill");
       }
 
+      // AI results box
+      const providerLabel = (aiProviders && aiProviders.length > 0)
+        ? aiProviders.join(" + ")
+        : "AI";
+      html += `<div class="ai-box">
+        <div class="ai-box-header">
+          <span class="ai-box-title">AI-Identified Tags</span>
+          <span class="ai-badge">${escHtml(providerLabel)}</span>
+        </div>`;
+
+      if (!aiTotal || aiTotal === 0) {
+        html += `<p class="ai-empty">No additional tags identified by AI.</p>`;
+      } else {
+        html += renderCategoryBlocks(aiGrouped || {}, "ai-tag-pill");
+      }
+
+      html += `</div>`;
       resultsEl.innerHTML = html;
     }
 

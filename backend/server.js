@@ -1,5 +1,7 @@
 // server.js — Express API server for Martech Tag Scanner
 
+require("dotenv").config();
+
 const express = require("express");
 const cors    = require("cors");
 const { scan } = require("./scraper");

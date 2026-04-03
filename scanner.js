@@ -39,5 +39,5 @@ async function runScan(rawUrl, { setStatus, setResults, setError }) {
     return;
   }
 
-  setResults(data.grouped, data.total, data.durationMs);
+  setResults(data.grouped, data.total, data.durationMs, data.aiGrouped, data.aiTotal, data.aiProviders);
 }
