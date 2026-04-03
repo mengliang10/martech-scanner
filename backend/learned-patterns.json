@@ -237,8 +237,51 @@
     "name": "Akamai",
     "category": "Performance Monitoring",
     "patterns": [
-      "ds-aksb-a\\.akamaihd\\.net/aksb\\.min\\.js"
+      "ds-aksb-a\\.akamaihd\\.net/aksb\\.min\\.js",
+      "684d0d44\\.akstat\\.io"
     ],
     "learnedAt": "2026-04-03T18:32:37.875Z"
+  },
+  {
+    "name": "YouTube Player/Embed",
+    "category": "Video & Content",
+    "patterns": [
+      "www\\.youtube\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:33:35.903Z"
+  },
+  {
+    "name": "DataDome",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "datadome\\.co",
+      "api-js\\.datadome\\.co"
+    ],
+    "learnedAt": "2026-04-03T18:33:35.904Z"
+  },
+  {
+    "name": "Akamai mPulse",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "s2\\.go-mpulse\\.net",
+      "c\\.go-mpulse\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:33:35.904Z"
+  },
+  {
+    "name": "Okta Sign-In Widget",
+    "category": "Other",
+    "patterns": [
+      "global\\.oktacdn\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:33:35.904Z"
+  },
+  {
+    "name": "GeeTest Captcha",
+    "category": "Other",
+    "patterns": [
+      "geo\\.captcha-delivery\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:33:35.904Z"
   }
 ]
