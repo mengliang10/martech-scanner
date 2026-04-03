@@ -671,6 +671,527 @@ const MARTECH_PATTERNS = [
       "yoast\\.com",
     ],
   },
+
+  // ─── SESSION RECORDING & HEATMAPS ────────────────────────────────────────
+  {
+    name: "Contentsquare",
+    category: "Session Recording",
+    patterns: [
+      "contentsquare\\.net",
+      "uxa\\.io",
+      "czplugin",
+      "ContentSquare\\.init",
+    ],
+  },
+  {
+    name: "Quantum Metric",
+    category: "Session Recording",
+    patterns: [
+      "cdn\\.quantummetric\\.com",
+      "quantummetric\\.com/api",
+    ],
+  },
+  {
+    name: "Glassbox",
+    category: "Session Recording",
+    patterns: [
+      "cdn\\.gbqofs\\.com",
+      "gbqofs\\.com",
+      "glassbox\\.com/recorder",
+    ],
+  },
+  {
+    name: "LogRocket",
+    category: "Session Recording",
+    patterns: [
+      "cdn\\.logrocket\\.io",
+      "logrocket\\.com/record",
+      "LogRocket\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "Smartlook",
+    category: "Session Recording",
+    patterns: [
+      "web-sdk\\.smartlook\\.com",
+      "rec\\.smartlook\\.com",
+      "smartlook\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "Inspectlet",
+    category: "Session Recording",
+    patterns: [
+      "cdn\\.inspectlet\\.com",
+      "__insp_push\\s*\\(",
+    ],
+  },
+  {
+    name: "Medallia Digital (Decibel)",
+    category: "Session Recording",
+    patterns: [
+      "cdn\\.decibelinsight\\.net",
+      "d\\.decibelinsight\\.net",
+      "medal\\.lia\\.com",
+      "dnx\\.medallia\\.com",
+    ],
+  },
+  {
+    name: "SessionStack",
+    category: "Session Recording",
+    patterns: [
+      "cdn\\.sessionstack\\.com",
+      "SessionStack\\.init\\s*\\(",
+    ],
+  },
+
+  // ─── PERSONALIZATION ─────────────────────────────────────────────────────
+  {
+    name: "Dynamic Yield",
+    category: "Personalization",
+    patterns: [
+      "cdn\\.dynamicyield\\.com",
+      "st\\.dynamicyield\\.com",
+      "DY\\.API\\s*\\(",
+    ],
+  },
+  {
+    name: "Monetate",
+    category: "Personalization",
+    patterns: [
+      "se\\.monetate\\.net",
+      "monetate\\.net/w/",
+    ],
+  },
+  {
+    name: "Salesforce Interaction Studio (Evergage)",
+    category: "Personalization",
+    patterns: [
+      "cdn\\.evergage\\.com",
+      "evergage\\.com/api",
+      "Evergage\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "Nosto",
+    category: "Personalization",
+    patterns: [
+      "connect\\.nosto\\.com",
+      "nosto\\.com/include",
+    ],
+  },
+  {
+    name: "Barilliance",
+    category: "Personalization",
+    patterns: [
+      "barilliance\\.net",
+      "barilliance\\.com/be",
+    ],
+  },
+  {
+    name: "RichRelevance (Emerge)",
+    category: "Personalization",
+    patterns: [
+      "recs\\.richrelevance\\.com",
+      "richrelevance\\.com/rrserver",
+    ],
+  },
+
+  // ─── CUSTOMER FEEDBACK & SURVEYS ─────────────────────────────────────────
+  {
+    name: "Qualtrics",
+    category: "Customer Feedback",
+    patterns: [
+      "qualtrics\\.com/WRSiteInterceptEngine",
+      "qualtrics\\.com/jfe",
+      "siteintercept\\.qualtrics\\.com",
+      "ZN_",
+    ],
+  },
+  {
+    name: "Medallia (Survey)",
+    category: "Customer Feedback",
+    patterns: [
+      "kampyle\\.com",
+      "medallia\\.com/survey",
+      "nebula\\.kampyle\\.com",
+    ],
+  },
+  {
+    name: "UserVoice",
+    category: "Customer Feedback",
+    patterns: [
+      "widget\\.uservoice\\.com",
+      "UserVoice\\.push\\s*\\(",
+    ],
+  },
+  {
+    name: "Typeform",
+    category: "Customer Feedback",
+    patterns: [
+      "embed\\.typeform\\.com",
+      "typeform\\.com/to/",
+    ],
+  },
+  {
+    name: "SurveyMonkey",
+    category: "Customer Feedback",
+    patterns: [
+      "surveymonkey\\.com/r/",
+      "smcx\\.com",
+      "surveymonkey\\.com/collect",
+    ],
+  },
+  {
+    name: "GetFeedback",
+    category: "Customer Feedback",
+    patterns: [
+      "getfeedback\\.com",
+      "usabilla\\.com",
+    ],
+  },
+  {
+    name: "Hotjar (Surveys)",
+    category: "Customer Feedback",
+    patterns: [
+      "insights\\.hotjar\\.com",
+    ],
+  },
+
+  // ─── E-COMMERCE ──────────────────────────────────────────────────────────
+  {
+    name: "Shopify Analytics",
+    category: "E-commerce",
+    patterns: [
+      "cdn\\.shopify\\.com",
+      "shopify\\.com/s/files",
+      "Shopify\\.analytics",
+    ],
+  },
+  {
+    name: "WooCommerce",
+    category: "E-commerce",
+    patterns: [
+      "woocommerce\\.com",
+      "wc-ajax",
+      "woocommerce_params",
+    ],
+  },
+  {
+    name: "Magento / Adobe Commerce",
+    category: "E-commerce",
+    patterns: [
+      "mage/cookies",
+      "Magento_",
+      "requirejs/require\\.js",
+    ],
+  },
+  {
+    name: "Yotpo",
+    category: "E-commerce",
+    patterns: [
+      "staticw2\\.yotpo\\.com",
+      "yotpo\\.com/widget",
+    ],
+  },
+  {
+    name: "Bazaarvoice",
+    category: "E-commerce",
+    patterns: [
+      "bazaarvoice\\.com",
+      "bvapi\\.bazaarvoice\\.com",
+    ],
+  },
+  {
+    name: "Trustpilot",
+    category: "E-commerce",
+    patterns: [
+      "widget\\.trustpilot\\.com",
+      "invitations\\.trustpilot\\.com",
+    ],
+  },
+  {
+    name: "Klevu",
+    category: "E-commerce",
+    patterns: [
+      "js\\.klevu\\.com",
+      "klevu\\.com/api",
+    ],
+  },
+  {
+    name: "Algolia",
+    category: "E-commerce",
+    patterns: [
+      "cdn\\.jsdelivr\\.net/npm/algoliasearch",
+      "algolia\\.net/1/indexes",
+      "algoliainsights\\.com",
+    ],
+  },
+
+  // ─── AFFILIATE & PARTNERSHIPS ─────────────────────────────────────────────
+  {
+    name: "Impact (Impact Radius)",
+    category: "Affiliate",
+    patterns: [
+      "utt\\.impactcdn\\.com",
+      "impact\\.com/conversions",
+      "d\\.impactradius-event\\.com",
+    ],
+  },
+  {
+    name: "CJ Affiliate (Commission Junction)",
+    category: "Affiliate",
+    patterns: [
+      "www\\.emjcd\\.com",
+      "cj\\.com/collector",
+      "qsstats\\.com",
+    ],
+  },
+  {
+    name: "Rakuten Marketing",
+    category: "Affiliate",
+    patterns: [
+      "tag\\.rmp\\.rakuten\\.com",
+      "linksynergy\\.com",
+    ],
+  },
+  {
+    name: "Partnerize",
+    category: "Affiliate",
+    patterns: [
+      "prf\\.hn",
+      "partnerize\\.com/v",
+    ],
+  },
+  {
+    name: "Awin",
+    category: "Affiliate",
+    patterns: [
+      "www\\.awin1\\.com",
+      "awin\\.com/awclick",
+    ],
+  },
+
+  // ─── MORE ADVERTISING ────────────────────────────────────────────────────
+  {
+    name: "Reddit Ads",
+    category: "Advertising",
+    patterns: [
+      "rdt\\.li",
+      "ads-api\\.reddit\\.com",
+      "reddit\\.com/ads/pixel",
+      "redditmedia\\.com/ads",
+      "rpx\\.reddit\\.com",
+    ],
+  },
+  {
+    name: "Quora Pixel",
+    category: "Advertising",
+    patterns: [
+      "qpxl\\.quora\\.com",
+      "quora\\.com/qevents\\.js",
+      "qp\\.push\\s*\\(",
+    ],
+  },
+  {
+    name: "StackAdapt",
+    category: "Advertising",
+    patterns: [
+      "tags\\.srv\\.stackadapt\\.com",
+      "stackadapt\\.com/saq",
+    ],
+  },
+  {
+    name: "The Trade Desk",
+    category: "Advertising",
+    patterns: [
+      "js\\.adsrvr\\.org",
+      "insight\\.adsrvr\\.org",
+    ],
+  },
+  {
+    name: "Xandr (AppNexus)",
+    category: "Advertising",
+    patterns: [
+      "acdn\\.adnxs\\.com",
+      "secure\\.adnxs\\.com",
+    ],
+  },
+  {
+    name: "Magnite (Rubicon)",
+    category: "Advertising",
+    patterns: [
+      "fastlane\\.rubiconproject\\.com",
+      "prebid\\.rubiconproject\\.com",
+    ],
+  },
+  {
+    name: "PubMatic",
+    category: "Advertising",
+    patterns: [
+      "ads\\.pubmatic\\.com",
+      "simage2\\.pubmatic\\.com",
+    ],
+  },
+  {
+    name: "Google AdSense",
+    category: "Advertising",
+    patterns: [
+      "pagead2\\.googlesyndication\\.com",
+      "adsbygoogle",
+    ],
+  },
+  {
+    name: "LiveRamp",
+    category: "Advertising",
+    patterns: [
+      "ats\\.rlcdn\\.com",
+      "liveramp\\.com/pixel",
+    ],
+  },
+
+  // ─── MORE MARKETING AUTOMATION ───────────────────────────────────────────
+  {
+    name: "Salesforce Marketing Cloud",
+    category: "Marketing Automation",
+    patterns: [
+      "exacttarget\\.com",
+      "salesforce-marketingcloud\\.com",
+      "memberclicks\\.net",
+      "et\\.exacttarget\\.com",
+    ],
+  },
+  {
+    name: "Emarsys (SAP)",
+    category: "Marketing Automation",
+    patterns: [
+      "cdn\\.scarabresearch\\.com",
+      "scarabresearch\\.com",
+      "emarsys\\.com/api",
+    ],
+  },
+  {
+    name: "Brevo (Sendinblue)",
+    category: "Marketing Automation",
+    patterns: [
+      "sibautomation\\.com",
+      "sendinblue\\.com/tracker",
+    ],
+  },
+  {
+    name: "dotdigital",
+    category: "Marketing Automation",
+    patterns: [
+      "r\\.dotdigital-pages\\.com",
+      "tracking\\.dotmailer\\.com",
+    ],
+  },
+  {
+    name: "Omnisend",
+    category: "Marketing Automation",
+    patterns: [
+      "omnisrc\\.com",
+      "omnisend\\.com/tracker",
+    ],
+  },
+  {
+    name: "Pendo",
+    category: "Marketing Automation",
+    patterns: [
+      "cdn\\.pendo\\.io",
+      "app\\.pendo\\.io",
+      "pendo\\.initialize\\s*\\(",
+    ],
+  },
+
+  // ─── VIDEO & CONTENT ─────────────────────────────────────────────────────
+  {
+    name: "Wistia",
+    category: "Video & Content",
+    patterns: [
+      "fast\\.wistia\\.com",
+      "fast\\.wistia\\.net",
+      "wistia\\.com/embed",
+    ],
+  },
+  {
+    name: "Vidyard",
+    category: "Video & Content",
+    patterns: [
+      "play\\.vidyard\\.com",
+      "embed\\.vidyard\\.com",
+    ],
+  },
+  {
+    name: "Brightcove",
+    category: "Video & Content",
+    patterns: [
+      "players\\.brightcove\\.net",
+      "brightcove\\.com/services",
+    ],
+  },
+  {
+    name: "JW Player",
+    category: "Video & Content",
+    patterns: [
+      "cdn\\.jwplayer\\.com",
+      "jwplatform\\.com",
+    ],
+  },
+
+  // ─── MORE ANALYTICS ──────────────────────────────────────────────────────
+  {
+    name: "New Relic Browser",
+    category: "Analytics",
+    patterns: [
+      "js-agent\\.newrelic\\.com",
+      "bam\\.nr-data\\.net",
+      "NREUM",
+    ],
+  },
+  {
+    name: "Dynatrace RUM",
+    category: "Analytics",
+    patterns: [
+      "bf\\.dynatrace\\.com",
+      "dynatracelabs\\.com",
+      "dtrum\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "Datadog RUM",
+    category: "Analytics",
+    patterns: [
+      "browser-intake-datadoghq\\.com",
+      "datadoghq\\.com/api/v2/rum",
+      "DD_RUM\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "Sentry",
+    category: "Analytics",
+    patterns: [
+      "browser\\.sentry-cdn\\.com",
+      "sentry\\.io/api",
+      "Sentry\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "PostHog",
+    category: "Analytics",
+    patterns: [
+      "app\\.posthog\\.com",
+      "us\\.i\\.posthog\\.com",
+      "posthog\\.init\\s*\\(",
+    ],
+  },
+  {
+    name: "Pirsch",
+    category: "Analytics",
+    patterns: [
+      "api\\.pirsch\\.io",
+    ],
+  },
 ];
 
 module.exports = { MARTECH_PATTERNS };
