@@ -168,19 +168,25 @@ function filterUnmatchedSignals(signals, patterns) {
 }
 
 /**
- * Full pipeline: scrape → detect (patterns + learned) → AI identify → return result object
+ * Full pipeline: scrape → detect (patterns + learned) → optionally AI identify
+ * @param {string} url
+ * @param {{ useAI?: boolean }} opts
  */
-async function scan(url) {
+async function scan(url, { useAI = false } = {}) {
   const { html, requestUrls } = await scrape(url);
   const allPatterns = mergeWithLearned(MARTECH_PATTERNS);
   const tags = detectTags(html, requestUrls, allPatterns);
   const grouped = groupByCategory(tags);
 
-  const signals = extractSignals(html, requestUrls, url);
-  const unmatchedSignals = filterUnmatchedSignals(signals, allPatterns);
-  console.log(`[scan] ${signals.length} signals, ${unmatchedSignals.length} unmatched → AI`);
-  const { aiTags, providers } = await identifyWithAI(unmatchedSignals, tags);
-  const aiGrouped = groupByCategory(aiTags);
+  let aiTags = [], aiGrouped = {}, providers = [];
+
+  if (useAI) {
+    const signals = extractSignals(html, requestUrls, url);
+    const unmatchedSignals = filterUnmatchedSignals(signals, allPatterns);
+    console.log(`[scan] ${signals.length} signals, ${unmatchedSignals.length} unmatched → AI`);
+    ({ aiTags, providers } = await identifyWithAI(unmatchedSignals, tags));
+    aiGrouped = groupByCategory(aiTags);
+  }
 
   return {
     tags, grouped, total: tags.length,

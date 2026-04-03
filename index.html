@@ -22,16 +22,8 @@
       text-align: center;
       margin-bottom: 40px;
     }
-    header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    header p {
-      margin-top: 8px;
-      color: #555;
-      font-size: 0.95rem;
-    }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+    header p  { margin-top: 8px; color: #555; font-size: 0.95rem; }
 
     .card {
       background: #fff;
@@ -39,14 +31,25 @@
       box-shadow: 0 2px 16px rgba(0,0,0,0.08);
       padding: 32px;
       width: 100%;
-      max-width: 680px;
+      max-width: 720px;
     }
 
+    /* ── Scan rows ── */
+    .scan-section { margin-bottom: 20px; }
+    .scan-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #888;
+      margin-bottom: 8px;
+    }
     .input-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
+      align-items: stretch;
     }
-    .input-row input {
+    .input-row input[type="text"] {
       flex: 1;
       padding: 12px 16px;
       border: 1.5px solid #dde1ea;
@@ -55,51 +58,76 @@
       outline: none;
       transition: border-color 0.2s;
     }
-    .input-row input:focus { border-color: #4f6ef7; }
+    .input-row input[type="text"]:focus { border-color: #4f6ef7; }
 
-    .input-row button {
-      padding: 12px 22px;
+    .input-row input[type="password"] {
+      width: 110px;
+      padding: 12px 14px;
+      border: 1.5px solid #dde1ea;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-row input[type="password"]:focus { border-color: #7c4dbd; }
+    .input-row input[type="password"].unlocked { border-color: #7c4dbd; background: #faf8ff; }
+
+    .btn-scan {
+      padding: 12px 20px;
       background: #4f6ef7;
       color: #fff;
       border: none;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s, opacity 0.2s;
       white-space: nowrap;
     }
-    .input-row button:hover { background: #3b55e0; }
-    .input-row button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-scan:hover:not(:disabled) { background: #3b55e0; }
+    .btn-scan:disabled { opacity: 0.45; cursor: not-allowed; }
 
+    .btn-ai {
+      padding: 12px 20px;
+      background: #7c4dbd;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+      white-space: nowrap;
+    }
+    .btn-ai:hover:not(:disabled) { background: #6b3fa0; }
+    .btn-ai:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 20px 0;
+    }
+
+    /* ── Feedback ── */
     #status {
-      margin-top: 20px;
+      margin-top: 16px;
       font-size: 0.9rem;
       color: #4f6ef7;
       min-height: 20px;
     }
-
     #error {
-      margin-top: 12px;
+      margin-top: 8px;
       font-size: 0.9rem;
       color: #d93025;
       min-height: 20px;
     }
+    #results { margin-top: 24px; }
 
-    #results {
-      margin-top: 24px;
-    }
-
-    .summary {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
+    /* ── Results ── */
+    .summary { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
     .summary strong { color: #1a1a2e; }
 
-    .category-block {
-      margin-bottom: 20px;
-    }
+    .category-block { margin-bottom: 20px; }
     .category-title {
       font-size: 0.75rem;
       font-weight: 700;
@@ -110,11 +138,7 @@
       padding-bottom: 6px;
       border-bottom: 1px solid #eee;
     }
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag-pill {
       background: #eef1fd;
       color: #3b55e0;
@@ -124,13 +148,10 @@
       font-weight: 500;
     }
 
-    .empty-state {
-      text-align: center;
-      padding: 32px 0;
-      color: #888;
-    }
+    .empty-state { text-align: center; padding: 32px 0; color: #888; }
     .empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
 
+    /* ── AI results box ── */
     .ai-box {
       margin-top: 28px;
       border: 1.5px solid #e8e0f8;
@@ -138,12 +159,7 @@
       padding: 20px 22px;
       background: #faf8ff;
     }
-    .ai-box-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
+    .ai-box-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
     .ai-box-title {
       font-size: 0.85rem;
       font-weight: 700;
@@ -167,19 +183,9 @@
       font-size: 0.88rem;
       font-weight: 500;
     }
-    .ai-empty {
-      font-size: 0.85rem;
-      color: #aaa;
-      text-align: center;
-      padding: 8px 0;
-    }
+    .ai-empty { font-size: 0.85rem; color: #aaa; text-align: center; padding: 8px 0; }
 
-    footer {
-      margin-top: 48px;
-      font-size: 0.8rem;
-      color: #aaa;
-      text-align: center;
-    }
+    footer { margin-top: 48px; font-size: 0.8rem; color: #aaa; text-align: center; }
     footer a { color: #aaa; }
   </style>
 </head>
@@ -187,20 +193,35 @@
 
   <header>
     <h1>Martech Tag Scanner</h1>
-    <p>Enter any website URL to detect which marketing technology tags are installed.</p>
+    <p>Detect marketing technology tags installed on any website.</p>
   </header>
 
   <div class="card">
-    <div class="input-row">
-      <input
-        type="text"
-        id="urlInput"
-        placeholder="https://example.com"
-        autocomplete="off"
-        spellcheck="false"
-      />
-      <button id="scanBtn" onclick="handleScan()">Scan</button>
+
+    <!-- Row 1: Pattern match only -->
+    <div class="scan-section">
+      <div class="scan-label">Pattern Match</div>
+      <div class="input-row">
+        <input type="text" id="urlInput1" placeholder="https://example.com"
+               autocomplete="off" spellcheck="false" />
+        <button class="btn-scan" id="scanBtn1" onclick="handleScan1()">Scan</button>
+      </div>
     </div>
+
+    <hr class="divider" />
+
+    <!-- Row 2: Pattern match + AI (password protected) -->
+    <div class="scan-section">
+      <div class="scan-label">Pattern Match + AI <span style="color:#7c4dbd;">(DeepSeek → Anthropic)</span></div>
+      <div class="input-row">
+        <input type="text" id="urlInput2" placeholder="https://example.com"
+               autocomplete="off" spellcheck="false" />
+        <input type="password" id="aiPassword" placeholder="Password"
+               oninput="checkPassword()" />
+        <button class="btn-ai" id="scanBtn2" onclick="handleScan2()" disabled>AI Scan</button>
+      </div>
+    </div>
+
     <div id="error"></div>
     <div id="status"></div>
     <div id="results"></div>
@@ -213,16 +234,26 @@
 
   <script src="scanner.js"></script>
   <script>
-    const urlInput = document.getElementById("urlInput");
-    const scanBtn  = document.getElementById("scanBtn");
-    const statusEl = document.getElementById("status");
-    const errorEl  = document.getElementById("error");
+    const statusEl  = document.getElementById("status");
+    const errorEl   = document.getElementById("error");
     const resultsEl = document.getElementById("results");
+    const scanBtn1  = document.getElementById("scanBtn1");
+    const scanBtn2  = document.getElementById("scanBtn2");
+    const urlInput1 = document.getElementById("urlInput1");
+    const urlInput2 = document.getElementById("urlInput2");
+    const pwInput   = document.getElementById("aiPassword");
 
-    // Allow pressing Enter to trigger scan
-    urlInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") handleScan();
-    });
+    const AI_PASSWORD = "Lipton";
+    let scanning = false;
+
+    urlInput1.addEventListener("keydown", e => { if (e.key === "Enter") handleScan1(); });
+    urlInput2.addEventListener("keydown", e => { if (e.key === "Enter" && !scanBtn2.disabled) handleScan2(); });
+
+    function checkPassword() {
+      const unlocked = pwInput.value === AI_PASSWORD;
+      scanBtn2.disabled = !unlocked || scanning;
+      pwInput.classList.toggle("unlocked", unlocked);
+    }
 
     function clearUI() {
       statusEl.textContent = "";
@@ -238,15 +269,22 @@
     function setError(msg) {
       errorEl.textContent  = msg;
       statusEl.textContent = "";
-      scanBtn.disabled = false;
+      setScanning(false);
+    }
+
+    function setScanning(val) {
+      scanning = val;
+      scanBtn1.disabled = val;
+      scanBtn2.disabled = val || pwInput.value !== AI_PASSWORD;
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
     }
 
     function renderCategoryBlocks(grouped, pillClass) {
-      const categories = Object.keys(grouped).sort();
-      return categories.map(cat => {
-        const pills = grouped[cat]
-          .map(name => `<span class="${pillClass}">${escHtml(name)}</span>`)
-          .join("");
+      return Object.keys(grouped).sort().map(cat => {
+        const pills = grouped[cat].map(n => `<span class="${pillClass}">${escHtml(n)}</span>`).join("");
         return `<div class="category-block">
           <div class="category-title">${escHtml(cat)}</div>
           <div class="tag-list">${pills}</div>
@@ -254,13 +292,9 @@
       }).join("");
     }
 
-    function escHtml(s) {
-      return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-    }
-
-    function setResults(grouped, total, durationMs, aiGrouped, aiTotal, aiProviders) {
+    function setResults(grouped, total, durationMs, aiGrouped, aiTotal, aiProviders, showAiBox) {
       statusEl.textContent = "";
-      scanBtn.disabled = false;
+      setScanning(false);
 
       const dur = durationMs ? ` in ${(durationMs / 1000).toFixed(1)}s` : "";
       let html = "";
@@ -274,36 +308,40 @@
           </p>
         </div>`;
       } else {
-        const categories = Object.keys(grouped).sort();
-        html += `<p class="summary">Found <strong>${total} tag${total !== 1 ? "s" : ""}</strong> across ${categories.length} categor${categories.length !== 1 ? "ies" : "y"}${dur}.</p>`;
+        const cats = Object.keys(grouped).sort();
+        html += `<p class="summary">Found <strong>${total} tag${total !== 1 ? "s" : ""}</strong> across ${cats.length} categor${cats.length !== 1 ? "ies" : "y"}${dur}.</p>`;
         html += renderCategoryBlocks(grouped, "tag-pill");
       }
 
-      // AI results box
-      const providerLabel = (aiProviders && aiProviders.length > 0)
-        ? aiProviders.join(" + ")
-        : "AI";
-      html += `<div class="ai-box">
-        <div class="ai-box-header">
-          <span class="ai-box-title">AI-Identified Tags</span>
-          <span class="ai-badge">${escHtml(providerLabel)}</span>
-        </div>`;
-
-      if (!aiTotal || aiTotal === 0) {
-        html += `<p class="ai-empty">No additional tags identified by AI.</p>`;
-      } else {
-        html += renderCategoryBlocks(aiGrouped || {}, "ai-tag-pill");
+      if (showAiBox) {
+        const providerLabel = (aiProviders && aiProviders.length > 0) ? aiProviders.join(" + ") : "AI";
+        html += `<div class="ai-box">
+          <div class="ai-box-header">
+            <span class="ai-box-title">AI-Identified Tags</span>
+            <span class="ai-badge">${escHtml(providerLabel)}</span>
+          </div>`;
+        if (!aiTotal || aiTotal === 0) {
+          html += `<p class="ai-empty">No additional tags identified by AI.</p>`;
+        } else {
+          html += renderCategoryBlocks(aiGrouped || {}, "ai-tag-pill");
+        }
+        html += `</div>`;
       }
 
-      html += `</div>`;
       resultsEl.innerHTML = html;
     }
 
-    async function handleScan() {
+    async function handleScan1() {
       clearUI();
-      scanBtn.disabled = true;
-      const url = urlInput.value;
-      await runScan(url, { setStatus, setResults, setError });
+      setScanning(true);
+      await runScan(urlInput1.value, { setStatus, setResults, setError }, false);
+    }
+
+    async function handleScan2() {
+      if (pwInput.value !== AI_PASSWORD) return;
+      clearUI();
+      setScanning(true);
+      await runScan(urlInput2.value, { setStatus, setResults, setError }, true);
     }
   </script>
 </body>

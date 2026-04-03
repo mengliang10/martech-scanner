@@ -10,21 +10,20 @@ const { load: loadLearned } = require("./pattern-learner");
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
-// Public tool — open CORS
 app.use(cors());
-
 app.use(express.json());
 
-// ── Health check ─────────────────────────────────────────────────────────────
+// ── Health check ──────────────────────────────────────────────────────────────
 app.get("/health", (_req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
 // ── Scan endpoint ─────────────────────────────────────────────────────────────
-// POST /scan   body: { url: "https://example.com" }
-// Returns:     { url, total, tags, grouped, requestUrlCount, durationMs }
+// POST /scan   body: { url, useAI? }
+// useAI: false → pattern match only
+// useAI: true  → pattern match + DeepSeek + Anthropic + learn new patterns
 app.post("/scan", async (req, res) => {
-  let { url } = req.body;
+  let { url, useAI = false } = req.body;
 
   if (!url || typeof url !== "string") {
     return res.status(400).json({ error: "url is required" });
@@ -39,11 +38,11 @@ app.post("/scan", async (req, res) => {
     return res.status(400).json({ error: "Invalid URL" });
   }
 
-  console.log(`[scan] ${url}`);
+  console.log(`[scan] ${url} useAI=${useAI}`);
   const start = Date.now();
 
   try {
-    const result = await scan(url);
+    const result = await scan(url, { useAI });
     const durationMs = Date.now() - start;
     console.log(`[scan] done in ${durationMs}ms — ${result.total} tags found`);
     res.json({ url, ...result, durationMs });
@@ -57,9 +56,6 @@ app.post("/scan", async (req, res) => {
 });
 
 // ── Export learned patterns ───────────────────────────────────────────────────
-// GET /export-patterns
-// Returns learned-patterns.json so you can commit it to the repo and persist
-// patterns across Railway deployments.
 app.get("/export-patterns", (_req, res) => {
   res.json(loadLearned());
 });

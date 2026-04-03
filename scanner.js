@@ -1,16 +1,13 @@
 // scanner.js — frontend API client
-// All heavy lifting (headless browser, pattern matching) is done by the backend.
 
-// ── Update this to your deployed Railway URL after deployment ──────────────
 const BACKEND_URL = "https://martech-scanner-production.up.railway.app";
-// ──────────────────────────────────────────────────────────────────────────
 
 /**
- * Main entry point — called by the UI.
  * @param {string} rawUrl
- * @param {object} ui  { setStatus, setResults, setError }
+ * @param {object} ui        { setStatus, setResults, setError }
+ * @param {boolean} useAI    true = pattern match + AI; false = pattern match only
  */
-async function runScan(rawUrl, { setStatus, setResults, setError }) {
+async function runScan(rawUrl, { setStatus, setResults, setError }, useAI = false) {
   let url = rawUrl.trim();
   if (!url) { setError("Please enter a URL."); return; }
   if (!/^https?:\/\//i.test(url)) url = "https://" + url;
@@ -18,14 +15,17 @@ async function runScan(rawUrl, { setStatus, setResults, setError }) {
   try { new URL(url); }
   catch { setError("That doesn't look like a valid URL."); return; }
 
-  setStatus("Starting headless browser scan… (may take 15–30 s)");
+  setStatus(useAI
+    ? "Starting scan with AI identification… (may take 30–60 s)"
+    : "Starting headless browser scan… (may take 15–30 s)"
+  );
 
   let data;
   try {
     const res = await fetch(`${BACKEND_URL}/scan`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url, useAI }),
     });
 
     if (!res.ok) {
@@ -39,5 +39,5 @@ async function runScan(rawUrl, { setStatus, setResults, setError }) {
     return;
   }
 
-  setResults(data.grouped, data.total, data.durationMs, data.aiGrouped, data.aiTotal, data.aiProviders);
+  setResults(data.grouped, data.total, data.durationMs, data.aiGrouped, data.aiTotal, data.aiProviders, useAI);
 }
