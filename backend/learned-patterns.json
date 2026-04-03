@@ -62,5 +62,133 @@
       "equalweb\\.com"
     ],
     "learnedAt": "2026-04-03T18:22:39.215Z"
+  },
+  {
+    "name": "Yahoo Japan YTag",
+    "category": "Advertising",
+    "patterns": [
+      "yimg\\.jp"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "LINE Tag",
+    "category": "Advertising",
+    "patterns": [
+      "d\\.line-scdn\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Innovid",
+    "category": "Advertising",
+    "patterns": [
+      "s-static\\.innovid\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Branch",
+    "category": "Marketing Automation",
+    "patterns": [
+      "branch\\.io"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Dynatrace",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "js-cdn\\.dynatrace\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Medallia",
+    "category": "Customer Feedback",
+    "patterns": [
+      "resources\\.digital-cloud\\.medallia\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Beacon by BTT",
+    "category": "Advertising",
+    "patterns": [
+      "marriott\\.btttag\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Kakao Pixel",
+    "category": "Advertising",
+    "patterns": [
+      "t1\\.daumcdn\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Naver Analytics",
+    "category": "Analytics",
+    "patterns": [
+      "wcs\\.naver\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Naver Conversion Tracking",
+    "category": "Advertising",
+    "patterns": [
+      "ssl\\.pstatic\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Adara",
+    "category": "Advertising",
+    "patterns": [
+      "adara\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Adobe Experience Cloud Consent",
+    "category": "Consent Management",
+    "patterns": [
+      "adobedc\\.demdex\\.net"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "OneTrust Geolocation",
+    "category": "Consent Management",
+    "patterns": [
+      "geolocation\\.onetrust\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.903Z"
+  },
+  {
+    "name": "Adobe Experience Platform",
+    "category": "Analytics",
+    "patterns": [
+      "smetrics\\.marriott\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.904Z"
+  },
+  {
+    "name": "Naver Conversion (NAC)",
+    "category": "Advertising",
+    "patterns": [
+      "nam\\.veta\\.naver\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.904Z"
+  },
+  {
+    "name": "Yandex Metrica",
+    "category": "Analytics",
+    "patterns": [
+      "yimg\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:26:41.904Z"
   }
 ]
