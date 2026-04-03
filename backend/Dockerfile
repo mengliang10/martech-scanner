@@ -10,13 +10,13 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY backend/package*.json ./
 RUN npm install
 
 # Install Chromium and all its OS-level dependencies
 RUN npx playwright install --with-deps chromium
 
-COPY . .
+COPY backend/ .
 
 ENV PORT=3000
 EXPOSE 3000
