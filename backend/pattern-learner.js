@@ -1,10 +1,14 @@
 // pattern-learner.js — Persist patterns learned from AI identifications
-// Writes to learned-patterns.json so future scans skip the LLM for known tools
+// Writes to learned-patterns.json locally AND auto-commits to GitHub
+// so patterns survive Railway redeploys without any manual copying.
 
 const fs   = require('fs');
 const path = require('path');
 
-const LEARNED_PATH = path.join(__dirname, 'learned-patterns.json');
+const LEARNED_PATH   = path.join(__dirname, 'learned-patterns.json');
+const GITHUB_API     = 'https://api.github.com';
+const GITHUB_FILE    = 'backend/learned-patterns.json';
+const GITHUB_BRANCH  = process.env.GITHUB_BRANCH || 'main';
 
 // CDNs that serve many different tools — hostname alone isn't enough to identify a tool
 const GENERIC_CDNS = [
@@ -29,12 +33,10 @@ function extractPattern(url) {
     );
 
     if (isGeneric) {
-      // Use hostname + first meaningful path segment
       const seg = pathname.split('/').filter(Boolean)[0] || '';
       return escapeRegex(hostname) + (seg ? '/' + escapeRegex(seg) : '');
     }
 
-    // Strip subdomains that don't identify the tool (cdn., static., js., tag., etc.)
     const core = hostname.replace(
       /^(cdn\d?|static\d?|assets\d?|js|tag|tags|pixel|collect|s|img|media|files)\./i,
       ''
@@ -62,7 +64,51 @@ function save(entries) {
 }
 
 /**
+ * Push learned-patterns.json to GitHub so it survives Railway redeploys.
+ * Requires GITHUB_TOKEN and GITHUB_REPO env vars.
+ */
+async function syncToGitHub(entries) {
+  const token = process.env.GITHUB_TOKEN;
+  const repo  = process.env.GITHUB_REPO; // e.g. "mengliang10/martech-scanner"
+  if (!token || !repo) return;
+
+  const content = Buffer.from(JSON.stringify(entries, null, 2) + '\n').toString('base64');
+  const apiUrl  = `${GITHUB_API}/repos/${repo}/contents/${GITHUB_FILE}`;
+  const headers = {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type':  'application/json',
+    'User-Agent':    'martech-scanner',
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+
+  try {
+    // Get current file SHA (required by GitHub API to update a file)
+    const getRes  = await fetch(`${apiUrl}?ref=${GITHUB_BRANCH}`, { headers });
+    const getJson = await getRes.json();
+    const sha     = getJson.sha;
+
+    const body = JSON.stringify({
+      message: `chore: update learned-patterns.json [${new Date().toISOString().slice(0,10)}]`,
+      content,
+      sha,
+      branch: GITHUB_BRANCH,
+    });
+
+    const putRes = await fetch(apiUrl, { method: 'PUT', headers, body });
+    if (putRes.ok) {
+      console.log(`[learn] synced ${entries.length} entries to GitHub`);
+    } else {
+      const err = await putRes.json().catch(() => ({}));
+      console.error('[learn] GitHub sync failed:', err.message || putRes.status);
+    }
+  } catch (err) {
+    console.error('[learn] GitHub sync error:', err.message);
+  }
+}
+
+/**
  * Persist patterns extracted from AI-identified results.
+ * Saves locally and pushes to GitHub automatically.
  * @param {Array} aiResults  [{ name, category, matchedUrl }]
  */
 function learnPatterns(aiResults) {
@@ -98,7 +144,11 @@ function learnPatterns(aiResults) {
     }
   }
 
-  if (changed) save(entries);
+  if (changed) {
+    save(entries);
+    // Fire-and-forget — don't block the scan response
+    syncToGitHub(entries).catch(() => {});
+  }
 }
 
 /**
