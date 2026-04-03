@@ -190,5 +190,13 @@
       "yimg\\.com"
     ],
     "learnedAt": "2026-04-03T18:26:41.904Z"
+  },
+  {
+    "name": "Techlab (Simpli.fi / Simpli)",
+    "category": "Advertising",
+    "patterns": [
+      "p11\\.techlab-cdn\\.com"
+    ],
+    "learnedAt": "2026-04-03T18:28:25.675Z"
   }
 ]
