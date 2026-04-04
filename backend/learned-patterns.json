@@ -302,5 +302,205 @@
       "loyaltysso\\.bestwestern\\.com"
     ],
     "learnedAt": "2026-04-03T18:35:51.053Z"
+  },
+  {
+    "name": "Microsoft Clarity",
+    "category": "Session Recording",
+    "patterns": [
+      "scripts\\.clarity\\.ms"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.081Z"
+  },
+  {
+    "name": "Survicate",
+    "category": "Customer Feedback",
+    "patterns": [
+      "surveys-static-prd\\.survicate-cdn\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.081Z"
+  },
+  {
+    "name": "Adagio (4Dex)",
+    "category": "Advertising",
+    "patterns": [
+      "script\\.4dex\\.io"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.081Z"
+  },
+  {
+    "name": "Lotame",
+    "category": "Advertising",
+    "patterns": [
+      "crwdcntrl\\.net"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.081Z"
+  },
+  {
+    "name": "Permutive",
+    "category": "Analytics",
+    "patterns": [
+      "c1630a48-8fcf-4a15-81dc-f933c6f74165\\.edge\\.permutive\\.app"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.081Z"
+  },
+  {
+    "name": "OneSignal",
+    "category": "Marketing Automation",
+    "patterns": [
+      "onesignal\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.081Z"
+  },
+  {
+    "name": "Dailymotion Player",
+    "category": "Video & Content",
+    "patterns": [
+      "geo\\.dailymotion\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Google Funding Choices",
+    "category": "Consent Management",
+    "patterns": [
+      "fundingchoicesmessages\\.google\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Prebid.js",
+    "category": "Advertising",
+    "patterns": [
+      "htlb\\.casalemedia\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "AppNexus (Xandr)",
+    "category": "Advertising",
+    "patterns": [
+      "ib\\.adnxs\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "GumGum",
+    "category": "Advertising",
+    "patterns": [
+      "g2\\.gumgum\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "TripleLift",
+    "category": "Advertising",
+    "patterns": [
+      "tlx\\.3lift\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Outbrain",
+    "category": "Advertising",
+    "patterns": [
+      "widget-pixels\\.outbrain\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "OpenX",
+    "category": "Advertising",
+    "patterns": [
+      "u\\.openx\\.net"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Rubicon Project",
+    "category": "Advertising",
+    "patterns": [
+      "secure-assets\\.rubiconproject\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Google IMA SDK",
+    "category": "Video & Content",
+    "patterns": [
+      "imasdk\\.googleapis\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Criteo",
+    "category": "Advertising",
+    "patterns": [
+      "gum\\.criteo\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Smart AdServer",
+    "category": "Advertising",
+    "patterns": [
+      "ssbsync\\.smartadserver\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Quantcast",
+    "category": "Analytics",
+    "patterns": [
+      "cms\\.quantserve\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Bidswitch",
+    "category": "Advertising",
+    "patterns": [
+      "x\\.bidswitch\\.net"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.082Z"
+  },
+  {
+    "name": "Insiad",
+    "category": "Advertising",
+    "patterns": [
+      "binsiad\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.083Z"
+  },
+  {
+    "name": "Browsi",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "browsiprod\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.083Z"
+  },
+  {
+    "name": "Enzymic",
+    "category": "Personalization",
+    "patterns": [
+      "imagecdn\\.enzymic\\.co"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.083Z"
+  },
+  {
+    "name": "Impactify",
+    "category": "Advertising",
+    "patterns": [
+      "ad\\.impactify\\.io"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.083Z"
+  },
+  {
+    "name": "Adition",
+    "category": "Advertising",
+    "patterns": [
+      "dsp-cookie\\.adfarm1\\.adition\\.com"
+    ],
+    "learnedAt": "2026-04-04T00:47:13.083Z"
   }
 ]
