@@ -39,5 +39,14 @@ async function runScan(rawUrl, { setStatus, setResults, setError }, useAI = fals
     return;
   }
 
-  setResults(data.grouped, data.total, data.durationMs, data.aiGrouped, data.aiTotal, data.aiProviders, useAI);
+  setResults(data.grouped, data.total, data.durationMs, data.aiGrouped, data.aiTotal, data.aiProviders, useAI, {
+    signalCount:       data.signalCount,
+    unmatchedCount:    data.unmatchedCount,
+    deepseekCalled:    data.deepseekCalled,
+    anthropicCalled:   data.anthropicCalled,
+    anthropicSkipped:  data.anthropicSkipped,
+    deepseekDomains:   data.deepseekDomains   || [],
+    anthropicDomains:  data.anthropicDomains  || [],
+    newPatternsLearned: data.newPatternsLearned || 0,
+  });
 }

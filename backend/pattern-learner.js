@@ -110,12 +110,13 @@ async function syncToGitHub(entries) {
  * Persist patterns extracted from AI-identified results.
  * Saves locally and pushes to GitHub automatically.
  * @param {Array} aiResults  [{ name, category, matchedUrl }]
+ * @returns {number} count of new patterns/tools added
  */
 function learnPatterns(aiResults) {
-  if (!aiResults || aiResults.length === 0) return;
+  if (!aiResults || aiResults.length === 0) return 0;
 
   const entries = load();
-  let changed = false;
+  let added = 0;
 
   for (const r of aiResults) {
     if (!r.matchedUrl || !r.name || !r.category) continue;
@@ -129,7 +130,7 @@ function learnPatterns(aiResults) {
     if (existing) {
       if (!existing.patterns.includes(pattern)) {
         existing.patterns.push(pattern);
-        changed = true;
+        added++;
         console.log(`[learn] +pattern "${pattern}" → "${r.name}"`);
       }
     } else {
@@ -139,16 +140,17 @@ function learnPatterns(aiResults) {
         patterns: [pattern],
         learnedAt: new Date().toISOString(),
       });
-      changed = true;
+      added++;
       console.log(`[learn] new tool "${r.name}" | pattern "${pattern}"`);
     }
   }
 
-  if (changed) {
+  if (added > 0) {
     save(entries);
-    // Fire-and-forget — don't block the scan response
     syncToGitHub(entries).catch(() => {});
   }
+
+  return added;
 }
 
 /**

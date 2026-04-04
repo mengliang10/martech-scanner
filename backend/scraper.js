@@ -179,12 +179,19 @@ async function scan(url, { useAI = false } = {}) {
   const grouped = groupByCategory(tags);
 
   let aiTags = [], aiGrouped = {}, providers = [];
+  let signalCount = 0, unmatchedCount = 0;
+  let deepseekCalled = false, anthropicCalled = false, anthropicSkipped = false;
+  let deepseekDomains = [], anthropicDomains = [], newPatternsLearned = 0;
 
   if (useAI) {
     const signals = extractSignals(html, requestUrls, url);
     const unmatchedSignals = filterUnmatchedSignals(signals, allPatterns);
-    console.log(`[scan] ${signals.length} signals, ${unmatchedSignals.length} unmatched → AI`);
-    ({ aiTags, providers } = await identifyWithAI(unmatchedSignals, tags));
+    signalCount = signals.length;
+    unmatchedCount = unmatchedSignals.length;
+    console.log(`[scan] ${signalCount} signals, ${unmatchedCount} unmatched → AI`);
+    ({ aiTags, providers, deepseekCalled, anthropicCalled, anthropicSkipped,
+       deepseekDomains, anthropicDomains, newPatternsLearned } =
+      await identifyWithAI(unmatchedSignals, tags));
     aiGrouped = groupByCategory(aiTags);
   }
 
@@ -192,6 +199,9 @@ async function scan(url, { useAI = false } = {}) {
     tags, grouped, total: tags.length,
     requestUrlCount: requestUrls.length,
     aiTags, aiGrouped, aiTotal: aiTags.length, aiProviders: providers,
+    signalCount, unmatchedCount,
+    deepseekCalled, anthropicCalled, anthropicSkipped,
+    deepseekDomains, anthropicDomains, newPatternsLearned,
   };
 }
 
