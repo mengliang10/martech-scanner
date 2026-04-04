@@ -625,5 +625,21 @@
       "ade\\.googlesyndication\\.com"
     ],
     "learnedAt": "2026-04-04T02:20:51.175Z"
+  },
+  {
+    "name": "Google Sign-In",
+    "category": "Other",
+    "patterns": [
+      "accounts\\.google\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:42:05.499Z"
+  },
+  {
+    "name": "AWS WAF",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "d8c14d4960ca\\.edge\\.sdk\\.awswaf\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:42:05.500Z"
   }
 ]
