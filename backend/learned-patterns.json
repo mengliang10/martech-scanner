@@ -641,5 +641,45 @@
       "d8c14d4960ca\\.edge\\.sdk\\.awswaf\\.com"
     ],
     "learnedAt": "2026-04-04T04:42:05.500Z"
+  },
+  {
+    "name": "Sourcepoint",
+    "category": "Consent Management",
+    "patterns": [
+      "sourcepoint\\.theguardian\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:43:54.551Z"
+  },
+  {
+    "name": "Ophan",
+    "category": "Analytics",
+    "patterns": [
+      "ophan\\.theguardian\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:43:54.551Z"
+  },
+  {
+    "name": "Braze",
+    "category": "Marketing Automation",
+    "patterns": [
+      "guim\\.co\\.uk"
+    ],
+    "learnedAt": "2026-04-04T04:43:54.551Z"
+  },
+  {
+    "name": "Google One Tap",
+    "category": "Authentication/CRM",
+    "patterns": [
+      "guim\\.co\\.uk"
+    ],
+    "learnedAt": "2026-04-04T04:43:54.551Z"
+  },
+  {
+    "name": "Polyfill.io",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "guim\\.co\\.uk"
+    ],
+    "learnedAt": "2026-04-04T04:43:54.551Z"
   }
 ]
