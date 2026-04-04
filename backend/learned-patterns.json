@@ -681,5 +681,21 @@
       "guim\\.co\\.uk"
     ],
     "learnedAt": "2026-04-04T04:43:54.551Z"
+  },
+  {
+    "name": "Amazon Web Services (AWS) WAF",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "1c5c1ecf7303\\.0b384439\\.ap-southeast-1\\.token\\.awswaf\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:45:32.963Z"
+  },
+  {
+    "name": "Amazon Analytics (Unspoken/First-party)",
+    "category": "Analytics",
+    "patterns": [
+      "fls-na\\.amazon\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:45:32.963Z"
   }
 ]
