@@ -371,7 +371,8 @@
     "name": "Prebid.js",
     "category": "Advertising",
     "patterns": [
-      "htlb\\.casalemedia\\.com"
+      "htlb\\.casalemedia\\.com",
+      "www16\\.mediacorp\\.sg"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -403,7 +404,8 @@
     "name": "Outbrain",
     "category": "Advertising",
     "patterns": [
-      "widget-pixels\\.outbrain\\.com"
+      "widget-pixels\\.outbrain\\.com",
+      "wave\\.outbrain\\.com"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -502,5 +504,93 @@
       "dsp-cookie\\.adfarm1\\.adition\\.com"
     ],
     "learnedAt": "2026-04-04T00:47:13.083Z"
+  },
+  {
+    "name": "Sensic",
+    "category": "Advertising",
+    "patterns": [
+      "sg-config\\.sensic\\.net"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Reddit Ads Pixel",
+    "category": "Advertising",
+    "patterns": [
+      "www\\.redditstatic\\.com"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "AddToAny",
+    "category": "Advertising",
+    "patterns": [
+      "addtoany\\.com"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Mediacorp UID",
+    "category": "Analytics",
+    "patterns": [
+      "uid\\.mediacorp\\.sg"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "BrandMetrics",
+    "category": "Customer Feedback",
+    "patterns": [
+      "brandmetrics\\.com"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Geoedge RUM",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "rumcdn\\.geoedge\\.be"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Embedly",
+    "category": "Video & Content",
+    "patterns": [
+      "embed\\.ly"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "OnThe.io",
+    "category": "Analytics",
+    "patterns": [
+      "onthe\\.io"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Popper.js",
+    "category": "Other",
+    "patterns": [
+      "unpkg\\.com/@popperjs"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Read-Smore",
+    "category": "Other",
+    "patterns": [
+      "unpkg\\.com/read-smore@2\\.5\\.1"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Cloudinary",
+    "category": "Other",
+    "patterns": [
+      "dam\\.mediacorp\\.sg"
+    ],
+    "learnedAt": "2026-04-04T01:15:58.347Z"
   }
 ]
