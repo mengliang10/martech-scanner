@@ -609,5 +609,21 @@
       "iceportal\\.com"
     ],
     "learnedAt": "2026-04-04T02:20:10.296Z"
+  },
+  {
+    "name": "Cloudflare Images",
+    "category": "Video & Content",
+    "patterns": [
+      "storage\\.kempinski\\.com"
+    ],
+    "learnedAt": "2026-04-04T02:20:51.175Z"
+  },
+  {
+    "name": "Google Ad Manager (DoubleClick)",
+    "category": "Advertising",
+    "patterns": [
+      "ade\\.googlesyndication\\.com"
+    ],
+    "learnedAt": "2026-04-04T02:20:51.175Z"
   }
 ]
