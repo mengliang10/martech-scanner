@@ -757,5 +757,117 @@
       "backstory\\.ebay\\.com"
     ],
     "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "Teads",
+    "category": "Advertising",
+    "patterns": [
+      "a\\.teads\\.tv"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.998Z"
+  },
+  {
+    "name": "Pubperf",
+    "category": "Advertising",
+    "patterns": [
+      "t\\.pubperf\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.998Z"
+  },
+  {
+    "name": "Pubtm",
+    "category": "Advertising",
+    "patterns": [
+      "pubtm\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.998Z"
+  },
+  {
+    "name": "Iterable",
+    "category": "Marketing Automation",
+    "patterns": [
+      "unpkg\\.com/@iterable"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.998Z"
+  },
+  {
+    "name": "OneTrust (Preference Center)",
+    "category": "Consent Management",
+    "patterns": [
+      "consent\\.preference-center\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.998Z"
+  },
+  {
+    "name": "Viafoura",
+    "category": "Chat & Support",
+    "patterns": [
+      "viafoura\\.net"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.998Z"
+  },
+  {
+    "name": "Fastclick (PubCID)",
+    "category": "Advertising",
+    "patterns": [
+      "secure\\.cdn\\.fastclick\\.net"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "WKND AI",
+    "category": "Advertising",
+    "patterns": [
+      "wknd\\.ai"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "ID5",
+    "category": "Advertising",
+    "patterns": [
+      "id5-sync\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "Bounce Exchange",
+    "category": "Personalization",
+    "patterns": [
+      "bounceexchange\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "4strokemedia (Fluid Player)",
+    "category": "Video & Content",
+    "patterns": [
+      "fluid\\.4strokemedia\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "Covatic",
+    "category": "Advertising",
+    "patterns": [
+      "browser\\.covatic\\.io"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "GenDiscover",
+    "category": "Chat & Support",
+    "patterns": [
+      "gendiscover\\.com"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "Chartbeat",
+    "category": "Analytics",
+    "patterns": [
+      "ping\\.chartbeat\\.net"
+    ],
+    "learnedAt": "2026-04-04T06:17:29.999Z"
   }
 ]
