@@ -11,7 +11,8 @@
     "name": "Cookiebot",
     "category": "Consent Management",
     "patterns": [
-      "consent\\.cookiebot\\.com"
+      "consent\\.cookiebot\\.com",
+      "consentcdn\\.cookiebot\\.com"
     ],
     "learnedAt": "2026-04-03T18:22:39.215Z"
   },
@@ -592,5 +593,21 @@
       "dam\\.mediacorp\\.sg"
     ],
     "learnedAt": "2026-04-04T01:15:58.347Z"
+  },
+  {
+    "name": "Cloudflare Web Analytics",
+    "category": "Analytics",
+    "patterns": [
+      "cloudflareinsights\\.com"
+    ],
+    "learnedAt": "2026-04-04T02:20:10.296Z"
+  },
+  {
+    "name": "ICE Portal",
+    "category": "Video & Content",
+    "patterns": [
+      "iceportal\\.com"
+    ],
+    "learnedAt": "2026-04-04T02:20:10.296Z"
   }
 ]
