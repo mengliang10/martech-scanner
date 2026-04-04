@@ -440,7 +440,8 @@
     "name": "Criteo",
     "category": "Advertising",
     "patterns": [
-      "gum\\.criteo\\.com"
+      "gum\\.criteo\\.com",
+      "sslwidget\\.criteo\\.com"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -520,7 +521,8 @@
     "name": "Reddit Ads Pixel",
     "category": "Advertising",
     "patterns": [
-      "www\\.redditstatic\\.com"
+      "www\\.redditstatic\\.com",
+      "alb\\.reddit\\.com"
     ],
     "learnedAt": "2026-04-04T01:15:58.347Z"
   },
@@ -699,5 +701,61 @@
       "fls-na\\.amazon\\.com"
     ],
     "learnedAt": "2026-04-04T04:45:32.963Z"
+  },
+  {
+    "name": "Tealium iQ",
+    "category": "Tag Manager",
+    "patterns": [
+      "mkttag\\.ebay\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "Google Tag Manager",
+    "category": "Tag Manager",
+    "patterns": [
+      "www\\.google\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "Yahoo Analytics",
+    "category": "Analytics",
+    "patterns": [
+      "sp\\.analytics\\.yahoo\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "eBay RUM (Real User Monitoring)",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "ir\\.ebaystatic\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "Google Analytics 4",
+    "category": "Analytics",
+    "patterns": [
+      "www\\.google\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "Google Ads Conversion Tracking",
+    "category": "Advertising",
+    "patterns": [
+      "www\\.google\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
+  },
+  {
+    "name": "Backstory (eBay Analytics)",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "backstory\\.ebay\\.com"
+    ],
+    "learnedAt": "2026-04-04T04:57:20.609Z"
   }
 ]
