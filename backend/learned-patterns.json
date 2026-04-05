@@ -416,7 +416,8 @@
     "name": "OpenX",
     "category": "Advertising",
     "patterns": [
-      "u\\.openx\\.net"
+      "u\\.openx\\.net",
+      "oa\\.openxcdn\\.net"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -738,7 +739,8 @@
     "name": "Google Analytics 4",
     "category": "Analytics",
     "patterns": [
-      "www\\.google\\.com"
+      "www\\.google\\.com",
+      "analytics\\.google\\.com"
     ],
     "learnedAt": "2026-04-04T04:57:20.609Z"
   },
@@ -869,5 +871,125 @@
       "ping\\.chartbeat\\.net"
     ],
     "learnedAt": "2026-04-04T06:17:29.999Z"
+  },
+  {
+    "name": "GrowthRx",
+    "category": "Analytics",
+    "patterns": [
+      "growthrx\\.in"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.498Z"
+  },
+  {
+    "name": "iBeat Analytics",
+    "category": "Analytics",
+    "patterns": [
+      "agi-static\\.indiatimes\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.498Z"
+  },
+  {
+    "name": "Prebid",
+    "category": "Advertising",
+    "patterns": [
+      "toiimg\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.498Z"
+  },
+  {
+    "name": "Clmbtech",
+    "category": "Advertising",
+    "patterns": [
+      "clmbtech\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.498Z"
+  },
+  {
+    "name": "Google Web Vitals",
+    "category": "Performance Monitoring",
+    "patterns": [
+      "toiimg\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.498Z"
+  },
+  {
+    "name": "Google DoubleClick",
+    "category": "Advertising",
+    "patterns": [
+      "stats\\.g\\.doubleclick\\.net"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.498Z"
+  },
+  {
+    "name": "Adsrvr (The Trade Desk)",
+    "category": "Advertising",
+    "patterns": [
+      "direct\\.adsrvr\\.org"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "Taboola",
+    "category": "Advertising",
+    "patterns": [
+      "display\\.bidder\\.taboola\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "PubMatic",
+    "category": "Advertising",
+    "patterns": [
+      "hbopenbid\\.pubmatic\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "Yahoo ConnectID",
+    "category": "Advertising",
+    "patterns": [
+      "connectid\\.analytics\\.yahoo\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "myGaru",
+    "category": "Advertising",
+    "patterns": [
+      "mgaru\\.dev"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "PubCID",
+    "category": "Advertising",
+    "patterns": [
+      "cdn\\.jsdelivr\\.net/gh"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "im-apps (Audience Platform)",
+    "category": "Advertising",
+    "patterns": [
+      "dmp\\.im-apps\\.net"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "RTB House",
+    "category": "Advertising",
+    "patterns": [
+      "esp\\.rtbhouse\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.499Z"
+  },
+  {
+    "name": "Google Safeframe",
+    "category": "Advertising",
+    "patterns": [
+      "a870fbff2b95c6e240616a45371d1092\\.safeframe\\.googlesyndication\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:46:45.500Z"
   }
 ]
