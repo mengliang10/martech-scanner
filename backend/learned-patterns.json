@@ -375,7 +375,8 @@
     "category": "Advertising",
     "patterns": [
       "htlb\\.casalemedia\\.com",
-      "www16\\.mediacorp\\.sg"
+      "www16\\.mediacorp\\.sg",
+      "foxnews\\.com"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -667,7 +668,8 @@
     "name": "Braze",
     "category": "Marketing Automation",
     "patterns": [
-      "guim\\.co\\.uk"
+      "guim\\.co\\.uk",
+      "foxnews\\.com"
     ],
     "learnedAt": "2026-04-04T04:43:54.551Z"
   },
@@ -991,5 +993,109 @@
       "a870fbff2b95c6e240616a45371d1092\\.safeframe\\.googlesyndication\\.com"
     ],
     "learnedAt": "2026-04-05T05:46:45.500Z"
+  },
+  {
+    "name": "TrueAnthem",
+    "category": "Content",
+    "patterns": [
+      "trueanthem\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.509Z"
+  },
+  {
+    "name": "Strike (Fox News Ad Platform)",
+    "category": "Advertising",
+    "patterns": [
+      "foxnews\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.509Z"
+  },
+  {
+    "name": "Knotch",
+    "category": "Customer Feedback",
+    "patterns": [
+      "www\\.knotch-cdn\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.509Z"
+  },
+  {
+    "name": "Adobe Experience Cloud Visitor ID",
+    "category": "Analytics",
+    "patterns": [
+      "foxnews\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.509Z"
+  },
+  {
+    "name": "Adobe Analytics (Omniture)",
+    "category": "Analytics",
+    "patterns": [
+      "foxnews\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.509Z"
+  },
+  {
+    "name": "Adobe Audience Manager",
+    "category": "Advertising",
+    "patterns": [
+      "dpm\\.demdex\\.net"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.509Z"
+  },
+  {
+    "name": "Fox News ISA (Identity & Segmentation)",
+    "category": "Personalization",
+    "patterns": [
+      "foxnews\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "Fox Profile Management",
+    "category": "CRM",
+    "patterns": [
+      "foxnews\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "AppsFlyer",
+    "category": "Analytics",
+    "patterns": [
+      "foxnews\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "Fennec (Fox Analytics)",
+    "category": "Analytics",
+    "patterns": [
+      "prod\\.fennec\\.atp\\.fox"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "Pyxis (Fox Ad Server)",
+    "category": "Advertising",
+    "patterns": [
+      "prod\\.pyxis\\.atp\\.fox"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "IDGraph (Fox Identity)",
+    "category": "Personalization",
+    "patterns": [
+      "prod\\.idgraph\\.dt\\.fox"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "Pixelate / PIX Publisher",
+    "category": "Analytics",
+    "patterns": [
+      "pix\\.pub"
+    ],
+    "learnedAt": "2026-04-05T05:47:26.510Z"
   }
 ]
