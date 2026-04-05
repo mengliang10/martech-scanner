@@ -418,7 +418,8 @@
     "category": "Advertising",
     "patterns": [
       "u\\.openx\\.net",
-      "oa\\.openxcdn\\.net"
+      "oa\\.openxcdn\\.net",
+      "rtb\\.openx\\.net"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -451,7 +452,8 @@
     "name": "Smart AdServer",
     "category": "Advertising",
     "patterns": [
-      "ssbsync\\.smartadserver\\.com"
+      "ssbsync\\.smartadserver\\.com",
+      "prg-apac\\.smartadserver\\.com"
     ],
     "learnedAt": "2026-04-04T00:47:13.082Z"
   },
@@ -870,7 +872,8 @@
     "name": "Chartbeat",
     "category": "Analytics",
     "patterns": [
-      "ping\\.chartbeat\\.net"
+      "ping\\.chartbeat\\.net",
+      "mab\\.chartbeat\\.com"
     ],
     "learnedAt": "2026-04-04T06:17:29.999Z"
   },
@@ -942,7 +945,8 @@
     "name": "PubMatic",
     "category": "Advertising",
     "patterns": [
-      "hbopenbid\\.pubmatic\\.com"
+      "hbopenbid\\.pubmatic\\.com",
+      "ut\\.pubmatic\\.com"
     ],
     "learnedAt": "2026-04-05T05:46:45.499Z"
   },
@@ -990,7 +994,8 @@
     "name": "Google Safeframe",
     "category": "Advertising",
     "patterns": [
-      "a870fbff2b95c6e240616a45371d1092\\.safeframe\\.googlesyndication\\.com"
+      "a870fbff2b95c6e240616a45371d1092\\.safeframe\\.googlesyndication\\.com",
+      "c39517b37df1937fdd596d5904e78d53\\.safeframe\\.googlesyndication\\.com"
     ],
     "learnedAt": "2026-04-05T05:46:45.500Z"
   },
@@ -1097,5 +1102,77 @@
       "pix\\.pub"
     ],
     "learnedAt": "2026-04-05T05:47:26.510Z"
+  },
+  {
+    "name": "MoEngage",
+    "category": "Marketing Automation",
+    "patterns": [
+      "moengage\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "33Across",
+    "category": "Advertising",
+    "patterns": [
+      "lexicon\\.33across\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "LiveIntent",
+    "category": "Advertising",
+    "patterns": [
+      "idx\\.liadm\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "The Trade Desk",
+    "category": "Advertising",
+    "patterns": [
+      "match\\.adsrvr\\.org"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "Google Ad Manager / DoubleClick",
+    "category": "Advertising",
+    "patterns": [
+      "cm\\.g\\.doubleclick\\.net"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "HT Media Analytics",
+    "category": "Analytics",
+    "patterns": [
+      "analytics\\.htmedia\\.in"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "Amazon DSP (Display)",
+    "category": "Advertising",
+    "patterns": [
+      "aax\\.amazon-adsystem\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.715Z"
+  },
+  {
+    "name": "Liadm",
+    "category": "Advertising",
+    "patterns": [
+      "rp\\.liadm\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.716Z"
+  },
+  {
+    "name": "CreativeWorks (Encrypted Signals)",
+    "category": "Advertising",
+    "patterns": [
+      "invstatic101\\.creativecdn\\.com"
+    ],
+    "learnedAt": "2026-04-05T05:50:21.716Z"
   }
 ]
